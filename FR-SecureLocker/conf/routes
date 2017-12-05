@@ -3,7 +3,11 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Application.index()
+GET     /                                       Application.index
+GET     /data_pengguna                               Application.list
+POST    /data_pengguna                               Application.save
+GET     /data_pengguna/{id}                          Application.form
+GET     /data_pengguna/new                           Application.form
 
-# Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+# Map static resources from the /app/public folder to the /public path
+GET     /                                       staticDir:public
